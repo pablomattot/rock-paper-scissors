@@ -1,12 +1,13 @@
-// player input
-let playerSelection = () => prompt('Rock, paper or scissors?');
+
 
 // loop through 5 rounds to play game
 function game() {
-    for (let i = 0; i < 5; i++) {
-        let computerChoice = computerPlay();
-        playRound(playerSelection(), computerChoice);
-    }
+    // for (let i = 0; i < 5; i++) {
+    // player input
+    let playerSelection = prompt('Rock, paper or scissors?');
+    let computerChoice = computerPlay();
+    playRound(playerSelection, computerChoice);
+    // }
 }
 
 // compare playerSelection to computerSelection
