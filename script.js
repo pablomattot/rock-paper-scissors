@@ -1,10 +1,15 @@
+const buttons = document.querySelectorAll('button');
 
+// Start game once a button is pressed. Set button.id to be player's selection
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        game(button.id);
+    })
+})
 
 // loop through 5 rounds to play game
-function game() {
+function game(playerSelection) {
     // for (let i = 0; i < 5; i++) {
-    // player input
-    let playerSelection = prompt('Rock, paper or scissors?');
     let computerChoice = computerPlay();
     playRound(playerSelection, computerChoice);
     // }
@@ -43,4 +48,4 @@ function computerPlay() {
     }
 }
 
-game();
+// game();
