@@ -1,4 +1,8 @@
 const buttons = document.querySelectorAll('button');
+const player = document.querySelector('#player');
+const comp = document.querySelector('#computer');
+let compScore = 0;
+let playerScore = 0;
 
 // Start game once a button is pressed. Set button.id to be player's selection
 buttons.forEach(button => {
@@ -15,23 +19,38 @@ function game(playerSelection) {
     // }
 }
 
+function changeScore(result) {
+    if (result === "win") {
+        playerScore++;
+    } else if (result === "loss") {
+        compScore++;
+    } else {
+        return;
+    }
+}
+
 // compare playerSelection to computerSelection
 function playRound(playerSelection, computerSelection) {
     if (computerSelection === playerSelection) {
         console.log(`DRAW! You: ${playerSelection} | Computer: ${computerSelection}`);
-        return "draw";
+        changeScore("draw");
+        // return "draw";
     } else if (playerSelection === "rock" && computerSelection != "paper") {
         console.log(`WIN! You: ${playerSelection} | Computer: ${computerSelection}`);
-        return "win";
+        changeScore("win");
+        // return "win";
     } else if (playerSelection === "paper" && computerSelection != "scissors") {
         console.log(`WIN! You: ${playerSelection} | Computer: ${computerSelection}`);
-        return "win";
+        changeScore("win");
+        // return "win";
     } else if (playerSelection === "scissors" && computerSelection != "rock") {
         console.log(`WIN! You: ${playerSelection} | Computer: ${computerSelection}`);
-        return "win";
+        changeScore("win");
+        // return "win";
     } else {
         console.log(`Loss... You: ${playerSelection} | Computer: ${computerSelection}`);
-        return "loss";
+        changeScore("loss");
+        // return "loss";
     }
 }
 
@@ -47,5 +66,3 @@ function computerPlay() {
             break;
     }
 }
-
-// game();
