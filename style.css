@@ -18,9 +18,14 @@ main {
     background-color: #232323;
     color: #FFF;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4em;
+    gap: 2em;
+}
+
+.scores span {
+    margin: 0 1em;
 }
 
 button {

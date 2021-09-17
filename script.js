@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll('button');
 const player = document.querySelector('#player');
 const comp = document.querySelector('#computer');
+const result = document.querySelector('#result');
 let compScore = 0;
 let playerScore = 0;
 
@@ -19,13 +20,18 @@ function game(playerSelection) {
     // }
 }
 
-function changeScore(result) {
-    if (result === "win") {
+// Add point to score and change text content of result
+function changeScore(outcome) {
+    if (outcome === "win") {
         playerScore++;
-    } else if (result === "loss") {
+        player.textContent = playerScore;
+        result.textContent = "WIN!!";
+    } else if (outcome === "loss") {
         compScore++;
+        comp.textContent = compScore;
+        result.textContent = "Loss...";
     } else {
-        return;
+        result.textContent = "Draw!";
     }
 }
 
