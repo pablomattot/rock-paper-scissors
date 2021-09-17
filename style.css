@@ -6,7 +6,24 @@
 main {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2em;
+}
+
+.scoreboard {
+    width: 50vw;
+    height: 25vh;
+    background-color: #232323;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+button {
+    margin: 0 1em;
+    padding: .5em;
 }
